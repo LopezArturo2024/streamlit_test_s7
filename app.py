@@ -1,7 +1,9 @@
+import time
+
 import scipy.stats
 import streamlit as st
-import time
 import pandas as pd
+
 
 if 'experiment_no' not in st.session_state:
     st.session_state['experiment_no'] = 0
@@ -46,9 +48,7 @@ if start_button:
                     columns=['no', 'iteraciones', 'media'])
         ],
         axis=0)
-    st.session_state['df_experiment_results'] = st.session_state['df_experiment_results'].reset_index(drop=True)
+    st.session_state['df_experiment_results'] =(
+    st.session_state['df_experiment_results'].reset_index(drop=True))
 
 st.write(st.session_state['df_experiment_results'])
-
-
-    # mean = toss_coin(number_of_trials)
